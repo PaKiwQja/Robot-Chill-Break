@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="th">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robot Chill Break</title>
+    <link href="https://fonts.googleapis.com/css2?family=Itim&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div class="container">
+        <!-- หน้าแรก -->
+        <div class="card" id="order-form">
+            <div class="logo">
+                <img src="Chill-Break.png" alt="Chill Logo" />
+            </div>
+            <h1>Chill Break</h1>
+
+            <!-- เพิ่มแท็ก <img> สำหรับแสดงรูปสินค้า -->
+            <div class="form-group" id="product-image-container" style="display:none;">
+                <img id="product-image" src="" alt="Product Image" style="width: 50%; margin-top: 10px;" />
+            </div>
+
+            <!-- เลือกรสชาติ -->
+            <div class="form-group">
+                <label>รสชาติ</label>
+                <select id="category" onchange="updateImage()">
+                    <option value="">-- เลือกรสชาติ --</option>
+                    <option value="ช็อคโกเเล็ต">ช็อคโกเเล็ต</option>
+                    <option value="สตอเบอร์รี่">สตอเบอร์รี่</option>
+                    <option value="บลูเบอร์รี่">บลูเบอร์รี่</option>
+                    <option value="ส้ม">ส้ม</option>
+                </select>
+            </div>
+
+            <!-- จำนวนขนม -->
+            <div class="form-group">
+                <label>จำนวนขนม</label>
+                <div class="quantity-controls">
+                    <button type="button" id="decrease-btn" onclick="changeQuantity(-1)">-</button>
+                    <input type="number" id="quantity" value="1" min="1" readonly>
+                    <button type="button" id="increase-btn" onclick="changeQuantity(1)">+</button>
+                </div>
+            </div>
+
+            <!-- เวลาจัดส่ง -->
+            <div class="form-group">
+                <label>เวลาจัดส่ง</label>
+                <input type="time" id="delivery-time" onchange="updateDeliveryTime()">
+            </div>
+
+            <!-- ตึก -->
+            <div class="form-group">
+                <label>ตึก</label>
+                <select id="building" onchange="updateFloors()">
+                    <option value="">-- เลือกตึก --</option>
+                    <option value="SBB">SBB</option>
+                    <option value="ACC">ACC</option>
+                </select>
+            </div>
+
+            <!-- ชั้น -->
+            <div class="form-group" id="floor-container" style="display:none;">
+                <label>ชั้น</label>
+                <select id="floor" onchange="updateFloorText()"></select>
+            </div>
+
+            <button type="button" class="submit-btn" onclick="goToPayment()">ถัดไป</button>
+        </div>
+
+        <!-- หน้าแสดงข้อมูลและชำระเงิน -->
+        <div class="payment-page" id="payment-page" style="display: none;">
+            <div class="payment-header">
+                <img src="QR-CODE.jpg" alt="QR Code" style="width: 150px;" />
+                <h2>สรุปรายการสั่งซื้อ</h2>
+            </div>
+            <div id="order-summary">
+                <p id="flavor-text"></p>
+                <p id="quantity-text"></p>
+                <p id="delivery-text"></p>
+                <p id="building-text"></p>
+                <p id="floor-text"></p>
+                <p id="price-text"></p>
+            </div>
+
+            <button type="button" class="confirm-btn" onclick="confirmPayment()">ยืนยันการชำระเงิน</button>
+        </div>
+
+        <!-- หน้าใบเสร็จ -->
+        <div class="receipt-page" id="receipt-page" style="display: none;">
+            <div class="receipt-header">
+                <h2>ใบเสร็จการสั่งซื้อ</h2>
+                <p>ขอบคุณสำหรับการสั่งซื้อกับเรา!</p>
+            </div>
+            <div id="receipt-summary">
+                <p id="receipt-flavor-text"></p>
+                <p id="receipt-quantity-text"></p>
+                <p id="receipt-delivery-text"></p>
+                <p id="receipt-building-text"></p>
+                <p id="receipt-floor-text"></p>
+                <p id="receipt-price-text"></p>
+            </div>
+
+            <button type="button" class="back-btn" onclick="backToHomePage()">กลับสู่หน้าหลัก</button>
+        </div>
+
+    </div>
+</body>
+
+</html>

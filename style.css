@@ -1,0 +1,225 @@
+body {
+    font-family: 'Itim', sans-serif;
+    background: linear-gradient(to right, #FFECB3, #F8BBD0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+.logo img {
+    width: 250px;
+    height: auto;
+    margin-bottom: 15px;
+    max-width: 90%;
+}
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.form-group {
+    margin: 15px 0;
+    width: 100%;
+    text-align: center;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #FCE4EC;
+    outline: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    border-color: #FF80AB;
+    background: #FFF;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.quantity-controls button {
+    background: #FF80AB;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: 0.3s;
+}
+
+.quantity-controls input {
+    width: 60px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background: #FCE4EC;
+}
+
+.quantity-controls button:hover {
+    background: #FF4081;
+}
+
+.submit-btn {
+    background: #66BB6A; /* เปลี่ยนเป็นสีเขียว */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 15px;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    opacity: 0.8;
+}
+
+.payment-page {
+    display: none;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.payment-header img {
+    width: 250px; /* ขยายขนาดของ QR Code */
+    margin-bottom: 20px;
+}
+
+.payment-header h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#order-summary p {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+}
+
+#order-summary p span {
+    font-weight: bold;
+    color: #FF4081;
+}
+
+.confirm-btn {
+    background: linear-gradient(to right, #66BB6A, #43A047);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 25px;
+    transition: 0.3s;
+}
+
+.confirm-btn:hover {
+    opacity: 0.8;
+}
+
+.payment-header {
+    text-align: center;
+}
+
+.receipt-page {
+    display: none;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.receipt-header h2 {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.receipt-header p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+#receipt-summary p {
+    font-size: 18px;
+    color: #555;
+    margin: 10px 0;
+}
+
+#receipt-summary p span {
+    font-weight: bold;
+    color: #FF4081;
+}
+
+.back-btn {
+    background: linear-gradient(to right, #FFB74D, #FFD54F);
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100%;
+    margin-top: 25px;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    opacity: 0.8;
+}
